@@ -4,11 +4,7 @@
   "description": "",
   "main": [
     "dist/ng1-module-grunt.js",
-    "dist/ng1-module-grunt.min.js",
-    "dist/ng1-module-grunt.min.js.map",
-    "dist/ng1-module-grunt.css",
-    "dist/ng1-module-grunt.min.css",
-    "dist/ng1-module-grunt.min.css.map"
+    "dist/ng1-module-grunt.css"
   ],
   "authors": [
     "Mike Henderyckx <mike.henderyckx@gmail.com> (http://mhx.be/)"
