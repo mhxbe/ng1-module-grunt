@@ -8,8 +8,9 @@ module.exports = function(grunt) {
             js: [
                 'src/js/module.js',
                 'src/js/*.js', // files: config.js, run.js, info.js
-                'src/js/*/*.js' // folders: constants, controllers, directives, factories, providers, services, values
-            ]
+                'src/js/*/*.js' // folders: constants, controllers, directives, factories, providers, services, values,
+            ],
+            html: 'src/views/**/*.htm'
         }
     };
 
@@ -30,14 +31,14 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'dist/<%= pkg.name %>.min.js': paths.src.js
+                    'dist/<%= pkg.name %>.min.js': paths.src.js.concat('tmp/ngtemplates.js')
                 }
             }
         },
 
         concat: {
             development: {
-                src: paths.src.js,
+                src: paths.src.js.concat('tmp/ngtemplates.js'),
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
@@ -49,6 +50,7 @@ module.exports = function(grunt) {
             developmentCSS: {
                 src: ['dist/<%= pkg.name %>.css']
             },
+            tmp: 'tmp',
             all: 'dist/*'
         },
 
@@ -60,8 +62,10 @@ module.exports = function(grunt) {
                 files: paths.src.js,
                 tasks: [
                     'clean:developmentJS',
+                    'ngtemplates:development',
                     'concat',
-                    'eslint'
+                    'eslint',
+                    'clean:tmp'
                 ]
             },
             css: {
@@ -69,6 +73,15 @@ module.exports = function(grunt) {
                 tasks: [
                     'clean:developmentCSS',
                     'sass:development'
+                ]
+            },
+            html: {
+                files: paths.src.html,
+                tasks: [
+                    'clean:developmentJS',
+                    'ngtemplates:development',
+                    'concat',
+                    'clean:tmp'
                 ]
             }
         },
@@ -92,6 +105,27 @@ module.exports = function(grunt) {
                     'dist/<%= pkg.name %>.min.css': 'src/css/scss/base.scss'
                 }
             }
+        },
+
+        ngtemplates: {
+            options: {
+                module: '<%= pkg.name %>',
+                quotes: 'single'
+            },
+            development: {
+                src: paths.src.html,
+                dest: 'tmp/ngtemplates.js'
+            },
+            production: {
+                src: paths.src.html,
+                dest: 'tmp/ngtemplates.js',
+                options: {
+                    htmlmin: {
+                        collapseWhitespace: true,
+                        removeComments: true
+                    }
+                }
+            }
         }
 
     });
@@ -100,16 +134,21 @@ module.exports = function(grunt) {
     grunt.registerTask('development', [
         'clean:developmentJS',
         'clean:developmentCSS',
-        'concat:development',
-        'sass:development'
+        'ngtemplates:development',
+        'concat',
+        'sass:development',
+        'clean:tmp'
     ]);
 
     // PRODUCTION
     grunt.registerTask('production', [
         'clean:all',
+        'ngtemplates:development',
         'concat',
+        'ngtemplates:production',
+        'uglify',
         'sass',
-        'uglify'
+        'clean:tmp'
     ]);
 
     // DEFAULT
