@@ -140,6 +140,24 @@ module.exports = function(grunt) {
                     // keepalive: true
                 }
             }
+        },
+
+        bump: {
+            options: {
+                files: [
+                    'package.json',
+                    'bower.json',
+                    'src/js/info.js'
+                ],
+                commit: true,
+                commitMessage: 'Release v%VERSION%',
+                commitFiles: ['-a'],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version %VERSION%',
+                push: true,
+                pushTo: 'origin'
+            }
         }
 
     });
