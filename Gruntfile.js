@@ -56,7 +56,8 @@ module.exports = function(grunt) {
 
         watch: {
             options: {
-                interrupt: true
+                interrupt: true,
+                livereload: true
             },
             js: {
                 files: paths.src.js,
@@ -126,6 +127,19 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 9001,
+                    useAvailablePort: true,
+                    open: true,
+                    base: ['.', 'example'],
+                    livereload: true
+                    // keepalive: true
+                }
+            }
         }
 
     });
@@ -154,6 +168,12 @@ module.exports = function(grunt) {
     // DEFAULT
     grunt.registerTask('default', [
         'development',
+        'watch'
+    ]);
+
+    // START WEBSERVER
+    grunt.registerTask('serve', [
+        'connect:server',
         'watch'
     ]);
 
