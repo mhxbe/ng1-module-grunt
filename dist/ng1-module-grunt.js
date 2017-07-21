@@ -1,10 +1,10 @@
 'use strict';
 angular
-    .module('ng1-skeleton-grunt', []);
+    .module('ng1-module-grunt', []);
 
 'use strict';
 angular
-    .module('ng1-skeleton-grunt')
+    .module('ng1-module-grunt')
     .config([
 
         function() {
@@ -14,14 +14,14 @@ angular
 
 'use strict';
 angular
-    .module('ng1-skeleton-grunt')
+    .module('ng1-module-grunt')
     .info({
         version: '0.0.0'
     });
 
 'use strict';
 angular
-    .module('ng1-skeleton-grunt')
+    .module('ng1-module-grunt')
     .run([
         '$rootElement',
         function($rootElement) {
@@ -32,10 +32,10 @@ angular
 
 'use strict';
 angular
-    .module('ng1-skeleton-grunt')
+    .module('ng1-module-grunt')
     .constant('Constant', 'constant');
 
-angular.module('ng1-skeleton-grunt').run(['$templateCache', function($templateCache) {
+angular.module('ng1-module-grunt').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('src/views/template.htm',

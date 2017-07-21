@@ -1,6 +1,6 @@
 {
 	"version": 3,
-	"file": "ng1-skeleton-grunt.min.css",
+	"file": "ng1-module-grunt.min.css",
 	"sources": [
 		"../src/css/scss/base.scss",
 		"../src/css/scss/_footer.scss",
