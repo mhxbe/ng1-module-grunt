@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "ng1-skeleton-grunt.min.css",
+	"sources": [
+		"../src/css/scss/base.scss",
+		"../src/css/scss/_footer.scss",
+		"../src/css/scss/components/_copyright.scss"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,MAAM,AAAC,CACH,KAAK,CAAE,KAAK,CACf,ACFD,AAAA,UAAU,AAAC,CACP,KAAK,CAAE,QAAQ,CAClB,AFED,AAAA,IAAI,AAAC,CACD,WAAW,CAAE,SAAS,CACtB,KAAK,CAAE,WAAW,CACrB"
+}

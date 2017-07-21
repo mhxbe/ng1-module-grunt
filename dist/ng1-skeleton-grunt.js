@@ -34,3 +34,20 @@ angular
 angular
     .module('ng1-skeleton-grunt')
     .constant('Constant', 'constant');
+
+angular.module('ng1-skeleton-grunt').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('src/views/template.htm',
+    '<template>\n' +
+    '    <header>Header</header>\n' +
+    '\n' +
+    '    <h2>Example template</h2>\n' +
+    '\n' +
+    '    <p>This is an example template.</p>\n' +
+    '\n' +
+    '    <footer>Footer</footer>\n' +
+    '</template>\n'
+  );
+
+}]);
