@@ -1,3 +1,3 @@
 'use strict';
 angular
-    .module('ng1-skeleton-grunt', []);
+    .module('ng1-module-grunt', []);

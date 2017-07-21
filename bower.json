@@ -1,8 +1,15 @@
 {
-  "name": "ng1-skeleton-grunt",
+  "name": "ng1-module-grunt",
   "version": "0.0.0",
   "description": "",
-  "main": "dist/ng-skeleton-grunt.js",
+  "main": [
+    "dist/ng1-module-grunt.js",
+    "dist/ng1-module-grunt.min.js",
+    "dist/ng1-module-grunt.min.js.map",
+    "dist/ng1-module-grunt.css",
+    "dist/ng1-module-grunt.min.css",
+    "dist/ng1-module-grunt.min.css.map"
+  ],
   "authors": [
     "Mike Henderyckx <mike.henderyckx@gmail.com> (http://mhx.be/)"
   ],
