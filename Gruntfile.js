@@ -135,9 +135,11 @@ module.exports = function(grunt) {
                     port: 9001,
                     useAvailablePort: true,
                     open: true,
-                    base: ['.', 'example'],
+                    base: [
+                        '.', // allows to fetch files from dist/
+                        'example' // will be served
+                    ],
                     livereload: true
-                    // keepalive: true
                 }
             }
         },
@@ -151,7 +153,7 @@ module.exports = function(grunt) {
                 ],
                 commit: true,
                 commitMessage: 'Release v%VERSION%',
-                commitFiles: ['-a'],
+                commitFiles: ['-a'], // all files
                 createTag: true,
                 tagName: 'v%VERSION%',
                 tagMessage: 'Version %VERSION%',
