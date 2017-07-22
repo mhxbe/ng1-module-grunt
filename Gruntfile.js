@@ -141,6 +141,18 @@ module.exports = function(grunt) {
                     ],
                     livereload: true
                 }
+            },
+            documentation: {
+                options: {
+                    port: 9009,
+                    useAvailablePort: true,
+                    open: true,
+                    base: [
+                        '.',
+                        'docs'
+                    ],
+                    keepalive: true
+                }
             }
         },
 
@@ -165,6 +177,26 @@ module.exports = function(grunt) {
         karma: {
             unit: {
                 configFile: 'karma.conf.js'
+            }
+        },
+
+        ngdocs: {
+            options: {
+                dest: 'docs',
+                scripts: [
+                    'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js',
+                    'dist/<%= pkg.name %>.js'
+                ],
+                html5Mode: true,
+                startPage: '/api',
+                title: '<%= pkg.name %>',
+                image: 'https://www.emojibase.com/resources/img/emojis/apple/x1f43b.png.pagespeed.ic.iVLaiMakQw.png',
+                imageLink: 'http://mhx.be',
+                inlinePartials: true,
+                bestMatch: true
+            },
+            all: {
+                src: paths.src.js
             }
         }
 

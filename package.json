@@ -4,6 +4,7 @@
   "description": "Grunt skeleton for AngularJS modules",
   "main": "index.js",
   "scripts": {
+    "documentation": "node_modules/grunt-cli/bin/grunt connect:documentation",
     "karma": "npm run test",
     "release:patch": "grunt bump-only:patch && grunt production && grunt bump-commit",
     "release:minor": "grunt bump-only:minor && grunt production && grunt bump-commit",
@@ -27,6 +28,7 @@
     "grunt-contrib-watch": "~1.0.0",
     "grunt-eslint": "~20.0.0",
     "grunt-karma": "~2.0.0",
+    "grunt-ngdocs": "~0.2.10",
     "grunt-sass": "~2.0.0",
     "karma": "~1.7.0",
     "karma-chai": "~0.1.0",
@@ -34,7 +36,7 @@
     "karma-coverage": "~1.1.1",
     "karma-mocha": "~1.3.0",
     "karma-mocha-reporter": "~2.2.3",
-    "karma-sinon": "^1.0.5",
+    "karma-sinon": "~1.0.5",
     "load-grunt-tasks": "~3.5.2",
     "mocha": "~3.4.2",
     "sinon": "~2.3.8"
