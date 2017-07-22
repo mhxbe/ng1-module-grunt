@@ -1,4 +1,8 @@
-node_modules
-npm-debug.log
-tmp
+# folders
+bower_components
 coverage
+node_modules
+tmp
+
+# files
+npm-debug.log
