@@ -160,6 +160,12 @@ module.exports = function(grunt) {
                 push: true,
                 pushTo: 'origin'
             }
+        },
+
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
         }
 
     });

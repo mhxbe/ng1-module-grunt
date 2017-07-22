@@ -4,15 +4,18 @@
   "description": "Grunt skeleton for AngularJS modules",
   "main": "index.js",
   "scripts": {
-    "serve": "node_modules/grunt-cli/bin/grunt serve",
+    "karma": "npm run test",
     "release:patch": "grunt bump-only:patch && grunt production && grunt bump-commit",
     "release:minor": "grunt bump-only:minor && grunt production && grunt bump-commit",
-    "release:major": "grunt bump-only:major && grunt production && grunt bump-commit"
+    "release:major": "grunt bump-only:major && grunt production && grunt bump-commit",
+    "serve": "node_modules/grunt-cli/bin/grunt serve",
+    "test": "node_modules/grunt-cli/bin/grunt karma"
   },
   "keywords": [],
   "author": "Mike Henderyckx <mike.henderyckx@gmail.com> (http://mhx.be/)",
   "license": "MIT",
   "devDependencies": {
+    "chai": "~4.1.0",
     "grunt": "~1.0.1",
     "grunt-angular-templates": "~1.1.0",
     "grunt-bump": "~0.8.0",
@@ -23,7 +26,17 @@
     "grunt-contrib-uglify": "~3.0.1",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-eslint": "~20.0.0",
+    "grunt-karma": "~2.0.0",
     "grunt-sass": "~2.0.0",
-    "load-grunt-tasks": "~3.5.2"
+    "karma": "~1.7.0",
+    "karma-chai": "~0.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage": "~1.1.1",
+    "karma-mocha": "~1.3.0",
+    "karma-mocha-reporter": "~2.2.3",
+    "karma-sinon": "^1.0.5",
+    "load-grunt-tasks": "~3.5.2",
+    "mocha": "~3.4.2",
+    "sinon": "~2.3.8"
   }
 }

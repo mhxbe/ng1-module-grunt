@@ -6,8 +6,7 @@
         "node": true
     },
     "globals": {
-        "angular": true,
-        "window": true
+        "angular": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
