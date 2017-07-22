@@ -67,3 +67,11 @@ With the `bump`-task, it's very easy to release new versions of the module. To m
 * `npm run release:major`
 
 This will run `grunt production` & bump the version used in  **package.json**, **bower.json** & **src/js/info.js**.
+
+## Testing
+
+Run `npm run karma` to test `src/`-folder and output test-coverage to `coverage/`-folder.
+
+
+## Documentation
+Run `npm run documentation` to spin up a local webserver which serves `ngdocs`-generated documentation.
