@@ -1,9 +1,15 @@
 footer {
-  color: black; }
+  color: #000; }
 
 .copyright {
-  color: deeppink; }
+  color: #ff1493; }
 
 body {
-  font-family: 'Verdana';
-  background: deepskyblue; }
+  background-color: #00bfff;
+  font-family: 'Verdana'; }
+  body header {
+    color: #0f0; }
+    body header h1 {
+      font-weight: bold; }
+      body header h1 .highlight {
+        color: #ff0; }

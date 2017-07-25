@@ -1,8 +1,22 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-@import "footer";
+@import 'variables';
+@import 'footer';
 
 body {
+    background-color: $skyblue;
     font-family: 'Verdana';
-    background: deepskyblue;
+
+    header {
+        color: $green;
+
+        h1 {
+            font-weight: bold;
+
+            .highlight {
+                color: $yellow;
+            }
+
+        }
+    }
 }
