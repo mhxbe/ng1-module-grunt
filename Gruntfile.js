@@ -73,7 +73,8 @@ module.exports = function(grunt) {
                 files: paths.src.css,
                 tasks: [
                     'clean:developmentCSS',
-                    'sass:development'
+                    'sass:development',
+                    'sasslint'
                 ]
             },
             html: {
@@ -106,6 +107,13 @@ module.exports = function(grunt) {
                     'dist/<%= pkg.name %>.min.css': 'src/css/scss/base.scss'
                 }
             }
+        },
+
+        sasslint: {
+            options: {
+                configFile: '.sass-lint.yml'
+            },
+            target: paths.src.css
         },
 
         ngtemplates: {

@@ -28,6 +28,7 @@
     "grunt-eslint": "~20.0.0",
     "grunt-karma": "~2.0.0",
     "grunt-sass": "~2.0.0",
+    "grunt-sass-lint": "~0.2.2",
     "karma": "~1.7.0",
     "karma-chai": "~0.1.0",
     "karma-chrome-launcher": "~2.2.0",
