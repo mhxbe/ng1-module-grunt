@@ -71,7 +71,3 @@ This will run `grunt production` & bump the version used in  **package.json**, *
 ## Testing
 
 Run `npm run karma` to test `src/`-folder and output test-coverage to `coverage/`-folder.
-
-
-## Documentation
-Run `npm run documentation` to spin up a local webserver which serves `ngdocs`-generated documentation.
